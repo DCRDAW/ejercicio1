@@ -12,17 +12,16 @@
 //Funcion que recibe los parámetros y los suma siempre que sea un número
 function sumar(array){
   let result=0
+  try {
   for(let i=0;i<array.length;i++){
-    try {
-      if(isNaN(array[i])==true){
-        throw ERROR
-      }else{
-        result=+result + +array[i]
-      } 
-    } catch (error) {
-      return error
-    }
-   
+    if(isNaN(array[i])==true){
+      throw ERROR
+    }else{
+      result=+result + +array[i]
+    } 
+  }
+  } catch(error){
+    return error
   }
   return result
 }
