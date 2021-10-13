@@ -13,11 +13,16 @@
 function sumar(array){
   let result=0
   for(let i=0;i<array.length;i++){
-    if(isNaN(array[i])==true){
-      return ERROR
-    }else{
-      result=+result + +array[i]
-    } 
+    try {
+      if(isNaN(array[i])==true){
+        throw ERROR
+      }else{
+        result=+result + +array[i]
+      } 
+    } catch (error) {
+      return error
+    }
+   
   }
   return result
 }
